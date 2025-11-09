@@ -25,6 +25,15 @@ app.get('/:room', (req,res) => {
 })
 
 
+io.on('connection', (socket) => {
+
+    socket.on('join-room',(roomId , userId) => {
+        console.log(roomId,userId)
+    })
+})
+
+
+
 httpServer.listen(3000, () => {
     console.log("server is running on port : 3000")
 })
