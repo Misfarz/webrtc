@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Video Room UI</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: #111827;
+      font-family: sans-serif;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .room-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 12px 20px;
+      background: #1f2937;
+      color: #fff;
+      border-bottom: 1px solid #374151;
+    }
+
+    .videos-wrapper {
+      flex: 1;
+      padding: 10px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 10px;
+      overflow-y: auto;
+    }
+
+    .video-box {
+      background: #000;
+      border: 1px solid #374151;
+      border-radius: 8px;
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .video-box video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .username-tag {
+      position: absolute;
+      bottom: 6px;
+      left: 6px;
+      background: rgba(0, 0, 0, 0.4);
+      padding: 4px 8px;
+      font-size: 13px;
+      color: #fff;
+      border-radius: 4px;
+    }
+
+    .controls {
+      display: flex;
+      justify-content: center;
+      gap: 14px;
+      padding: 12px 0;
+      background: #1f2937;
+      border-top: 1px solid #374151;
+    }
+
+    .ctrl-btn {
+      background: #374151;
+      color: #fff;
+      border: none;
+      padding: 10px 16px;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: 0.2s;
+      font-size: 14px;
+    }
+
+    .ctrl-btn:hover {
+      background: #4b5563;
+    }
+  </style>
+</head>
+<body>
+  <div class="room-header">
+    <h3>Room: Demo Room</h3>
+    <span>Users: 3</span>
+  </div>
+
+  <div class="videos-wrapper">
+    <div class="video-box">
+      <video autoplay muted></video>
+      <div class="username-tag">You</div>
+    </div>
+
+    <div class="video-box">
+      <video autoplay></video>
+      <div class="username-tag">User 2</div>
+    </div>
+
+    <div class="video-box">
+      <video autoplay></video>
+      <div class="username-tag">User 3</div>
+    </div>
+  </div>
+
+  <div class="controls">
+    <button class="ctrl-btn">Mute</button>
+    <button class="ctrl-btn">Stop Video</button>
+    <button class="ctrl-btn">Share Screen</button>
+    <button class="ctrl-btn" style="background:#b91c1c;">Leave</button>
+  </div>
+</body>
+</html>
